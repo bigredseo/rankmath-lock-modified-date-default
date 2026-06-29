@@ -5,6 +5,7 @@
  * Author: Big Red SEO
  * Author URI: https://www.bigredseo.com
  * Version: 1.0.0
+ * GitHub URI: https://github.com/bigredseo/rankmath-lock-modified-date-default
  *
  * NOTE: If adding to functions.php, remove the opening <?php line above
  * and the plugin header comment block.
