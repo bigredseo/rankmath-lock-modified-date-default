@@ -46,6 +46,10 @@ This works by observing the editor DOM for Rank Math's **Lock Modified Date** to
 
 This is not a Rank Math API integration. If Rank Math or WordPress changes the block editor markup in a future release, this snippet may need to be updated.
 
+## Author
+
+Built and maintained by [Big Red SEO](https://www.bigredseo.com), a WordPress development and SEO company in Omaha, Nebraska.
+
 ## License
 
 GPL-2.0-or-later
