@@ -19,6 +19,10 @@ Add the contents of `rankmath-lock-modified-date-default.php` to your theme's `f
 
 Copy the contents of `rankmath-lock-modified-date-default.php` and paste it as a new PHP snippet.
 
+### Option C — Must-Use Plugin
+
+Upload `rankmath-lock-modified-date-default.php` directly to your `wp-content/mu-plugins/` folder. It will load automatically with no activation needed.
+
 ## Behavior
 
 * Runs on post edit screens, including posts, pages, and custom post types.
