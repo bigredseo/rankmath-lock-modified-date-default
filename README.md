@@ -4,6 +4,14 @@ By default, Rank Math's **Lock Modified Date** toggle in the WordPress block edi
 
 This snippet sets the toggle to ON each time the editor loads, then disconnects immediately so the user can still manually unlock it for that save if needed.
 
+## Why
+
+Rank Math's **Lock Modified Date** toggle prevents WordPress from updating a post's modified date when you save minor changes. That can be useful for SEO and content management when you do not want a small edit, image swap, typo fix, or layout adjustment treated like a meaningful content update.
+
+However, Rank Math does not currently provide a setting to make this toggle ON by default. That means editors have to remember to enable it before saving minor updates.
+
+This snippet removes that friction by setting **Lock Modified Date** to ON when the editor loads, while still allowing the user to manually turn it OFF for any save where the modified date should be updated.
+
 ## Requirements
 
 * WordPress block editor
