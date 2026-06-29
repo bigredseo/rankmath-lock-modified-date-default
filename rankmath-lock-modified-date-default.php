@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name: RankMath Lock Modified Date Default
- * Description: Defaults the RankMath "Lock Modified Date" toggle to ON in the WordPress block editor.
+ * Plugin Name: Rank Math Lock Modified Date Default
+ * Description: Defaults the Rank Math "Lock Modified Date" toggle to ON in the WordPress block editor.
  * Author: Big Red SEO
  * Author URI: https://www.bigredseo.com
  * Version: 1.0.0
