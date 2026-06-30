@@ -20,12 +20,18 @@ function brs_default_lock_rankmath_modified_date_js() {
     if ( ! $screen || 'post' !== $screen->base ) {
         return;
     }
-    ?>
-    <script type="text/javascript">
+
+    wp_add_inline_script(
+        'wp-edit-post',
+        brs_get_lock_rankmath_modified_date_script()
+    );
+}
+
+function brs_get_lock_rankmath_modified_date_script() {
+    return <<<JS
     (function() {
         let hasRun = false;
         let observer = null;
-
         function lockRankMathModifiedDateOnce() {
             if (hasRun) {
                 return;
@@ -41,21 +47,17 @@ function brs_default_lock_rankmath_modified_date_js() {
             const flex       = label.closest('.components-flex');
             const toggleSpan = flex ? flex.querySelector('.components-form-toggle') : null;
             const checkbox   = flex ? flex.querySelector('.components-form-toggle__input') : null;
-            // Label exists but full toggle is not ready yet — keep observing.
             if (!toggleSpan || !checkbox) {
                 return;
             }
-            // Only click if currently unchecked.
             if (!toggleSpan.classList.contains('is-checked')) {
                 checkbox.click();
             }
-            // Stop after the first successful toggle check so it does not fight the user.
             hasRun = true;
             if (observer) {
                 observer.disconnect();
             }
         }
-
         function startObserver() {
             if (!document.body) {
                 return;
@@ -65,22 +67,18 @@ function brs_default_lock_rankmath_modified_date_js() {
                 childList: true,
                 subtree: true,
             });
-            // In case the toggle is already in the DOM before the observer fires.
             lockRankMathModifiedDateOnce();
-            // Safety cleanup if Rank Math never renders the toggle.
             setTimeout(function() {
                 if (observer) {
                     observer.disconnect();
                 }
             }, 10000);
         }
-
         if (document.body) {
             startObserver();
         } else {
             document.addEventListener('DOMContentLoaded', startObserver);
         }
     })();
-    </script>
-    <?php
+    JS;
 }
